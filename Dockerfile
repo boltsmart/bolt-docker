@@ -1,9 +1,9 @@
-FROM debian:10.4
+FROM debian:10.8
 
 RUN apt-get update 
 RUN apt-get upgrade -y
-RUN apt-get -y install git vim wget procps build-essential libssl-dev libmariadbclient-dev mariadb-client net-tools valgrind cppcheck clang-format-6.0 python-pip
-RUN pip install cpplint  
+RUN apt-get -y install git vim wget procps build-essential libssl-dev libmariadbclient-dev mariadb-client net-tools valgrind cppcheck clang-format-6.0 python3-pip
+RUN pip3 install cpplint  
 RUN mkdir -p /etc/supla-server
 
 WORKDIR /CProjects/supla-core/supla-server

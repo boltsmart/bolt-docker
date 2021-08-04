@@ -1,14 +1,17 @@
 FROM debian:10.8
 
+ENV ANDROID_SDK_ROOT=/usr/lib/android-sdk
+ENV PATH="$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/bin:$ANDROID_SDK_ROOT/tools:${PATH}"
+
+RUN cd
 RUN apt-get update 
 RUN apt-get upgrade -y
-RUN apt-get -y install git vim wget procps build-essential libssl-dev libmariadbclient-dev mariadb-client net-tools valgrind cppcheck clang-format-6.0 python3-pip
-RUN pip3 install cpplint  
-RUN mkdir -p /etc/supla-server
+RUN apt-get -y install android-sdk wget zip vim
+RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip
+RUN unzip commandlinetools-linux-7583922_latest.zip
+RUN rm commandlinetools-linux-*
+RUN mv cmdline-tools /usr/lib/android-sdk/
 
-WORKDIR /CProjects/supla-core/supla-server
+RUN yes | sdkmanager "platforms;android-30" --sdk_root=/usr/lib/android-sdk
+RUN yes | sdkmanager "build-tools;30.0.3" --sdk_root=/usr/lib/android-sdk
 
-COPY supla.cfg /etc/supla-server/
-COPY supla-test.cfg /etc/supla-server/
-COPY private.key /etc/supla-server/
-COPY cert.crt /etc/supla-server/

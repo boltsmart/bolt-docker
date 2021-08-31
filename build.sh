@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t "devel/esp8266" .
+docker build --no-cache -t "devel/esp8266" .

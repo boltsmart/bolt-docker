@@ -34,12 +34,12 @@ Your home connected. With Docker. www.supla.org
    ```
 1. Generate sample config by running
    ```
-   ./supla-docker/supla.sh
+   ./bolt-docker/supla.sh
    ```
    Review the settings in `./supla-docker/.env` file.
 1. Start SUPLA!
    ```
-   ./supla-docker/supla.sh start
+   ./bolt-docker/supla.sh start
    ```
    
 ## Creating an user account
@@ -48,12 +48,12 @@ The account will be automatically created for you. You can remove these settings
 
 If the containers are started already, you can create new user account interactively with:
 ```
-./supla-docker/supla.sh create-confirmed-user
+./bolt-docker/supla.sh create-confirmed-user
 ```
 
 ## Upgrading to the newest version
 ```
-cd supla-docker
+cd bolt-docker
 git pull
 ./supla.sh upgrade
 ```

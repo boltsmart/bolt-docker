@@ -2,7 +2,7 @@ version: '3'
 
 services:
   supla-cloud:
-    image: supla/supla-cloud:arm32v7
+    image: boltsmart/bolt-cloud:arm32v7
 
   supla-db:
     image: hypriot/rpi-mysql:5.5

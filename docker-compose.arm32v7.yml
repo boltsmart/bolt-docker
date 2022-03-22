@@ -8,4 +8,4 @@ services:
     image: hypriot/rpi-mysql:5.5
 
   supla-server:
-    image: supla/supla-server:arm32v7
+    image: boltsmart/bolt-server:arm32v7

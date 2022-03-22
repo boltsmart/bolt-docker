@@ -49,7 +49,7 @@ services:
     links:
       - supla-db
     depends_on:
-      - supla-cloud
+      - bolt-cloud
 
 volumes:
   supla-server-socket: {}

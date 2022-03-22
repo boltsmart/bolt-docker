@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  supla-cloud:
+  bolt-cloud:
     container_name: ${COMPOSE_PROJECT_NAME}-cloud
     restart: unless-stopped
     image: boltsmart/bolt-cloud

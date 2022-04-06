@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  supla-cloud:
+  bolt-cloud:
     ports:
       - "${PORT_HTTP}:80"
       - "${PORT_HTTPS}:443"
